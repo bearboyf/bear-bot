@@ -1,0 +1,1 @@
+worker: python bearbot sample code.py
