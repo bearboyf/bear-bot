@@ -6,3 +6,4 @@ multidict==4.5.2
 pip==18.1
 setuptools==40.6.2
 websockets==3.4
+random
