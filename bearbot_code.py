@@ -11,8 +11,8 @@ client = Bot(command_prefix=BOT_PREFIX)
 #------tokens------
 
 RESPONSE_LIST = ["Hell yeah!!!!", "Hell no!!!!", "Fuck yeah!!!!", "Fuck no!!!!"]
-BEAR_IMG = ["babybear.png", "unitbear.png", "bearface.png", "cub.png", "polarkiss.png",
-            "familee.png", "stand.png", "sit.png", "wet.png"]
+BEAR_IMG = ["babybear.jpg", "unitbear.jpg", "bearface.jpg", "cub.jpg", "polarkiss.jpg",
+            "familee.jpg", "stand.jpg", "sit.jpg", "wet.jpg"]
 POSI_MSG = ["I think you're great!!!!", "I'm proud of you!!!!", "Keep it up!!!!",
             "You're loved!!!!", "You're doing great!!!!",
             "Don't forget to drink some water!!!!", "You're amazing!!!!",
