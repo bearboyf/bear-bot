@@ -163,6 +163,12 @@ async def abbascale(ctx, *, message):
                 aliases = ['bearfacts'])
 async def bearfacts(ctx):
     await client.say(random.choice(BEARFACTS))
+
+@client.command(pass_context=True,
+                name = 'help',
+                aliases = ['Help'])
+async def help(ctx):
+            await client.say("Sorry! This function is in development right now! Please try again later.")
 #------commands------
 
 client.run(TOKEN)
