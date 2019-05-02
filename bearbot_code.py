@@ -10,7 +10,7 @@ BOT_PREFIX = ("bearbot ", "Bearbot ")
 client = Bot(command_prefix=BOT_PREFIX)
 #------tokens------
 
-RESPONSE_LIST = ["Hell yeah!!!!", "Hell no!!!!", "Fuck yeah!!!!", "Fuck no!!!!"]
+RESPONSE_LIST = ["Hell yeah!!!!", "Hell no!!!!", "Fuck yeah!!!!", "Fuck no!!!!", "Maybe!!!!", "That's possible!!!!"]
 BEAR_IMG = ["babybear.jpg", "unitbear.jpg", "bearface.jpg", "cub.jpg", "polarkiss.jpg",
             "familee.jpg", "stand.jpg", "sit.jpg", "wet.jpg", "baby.jpg", "hug.jpg"]
 POSI_MSG = ["I think you're great!!!!", "I'm proud of you!!!!", "Keep it up!!!!",
@@ -18,7 +18,7 @@ POSI_MSG = ["I think you're great!!!!", "I'm proud of you!!!!", "Keep it up!!!!"
             "Don't forget to drink some water!!!!", "You're amazing!!!!",
             "Make sure you get some sleep!!!!", "I care about you!!!!",
             "It's *unbearable* to see you sad!!!! Cheer up!!!! I love you!!!!",
-            "I love you a lot!!!!", "I believe in you!!!!", ]
+            "I love you a lot!!!!", "I believe in you!!!!", "You're a great person!!!!" ]
 OMEGAVERSE = [" is an alpha!!!!", " is an omega!!!!", " is a beta!!!!"]
 TIKTOK = ["https://youtu.be/drLbsdaSft8", "https://youtu.be/jwOew-ycjP0",
           "https://youtu.be/2mi3lD8KzRo", "https://youtu.be/Tj-tQD0hngU" ]
@@ -61,7 +61,7 @@ async def say(ctx, *args):
 @client.command(pass_context=True,
                 name = 'is',
                 aliases = ["am", "do", "does", "are",
-                           "will", "can", "should", "could", "did", "have"])
+                           "will", "can", "should", "could", "did", "have", "would"])
 async def question_yn(context):
     await client.say(random.choice(RESPONSE_LIST))
 
