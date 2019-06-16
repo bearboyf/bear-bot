@@ -5,7 +5,7 @@ import asyncio
 from discord.utils import get
 #------imports------
 
-TOKEN = 'NTUxNTYxNTIyMjY3MTYwNTk2.XMs4TA.tDvI1wlHd-9UZeQmryJ4HjH4no0'
+TOKEN = 'NTg5ODg0NTg0MDIwMTQ4MjU1.XQaK8A.4bKLall6vykfCu3cCj01emc4tLY'
 BOT_PREFIX = ("bearbot ", "Bearbot ")
 client = Bot(command_prefix=BOT_PREFIX)
 #------tokens------
