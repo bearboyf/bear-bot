@@ -48,6 +48,7 @@ BEARFACTS = ["Bears can live as long as 30 years in the wild!!!!",
              "A panda's eye is a vertical slit, allowing it to see by day and night!!!!",
              "Baloo from the Jungle Book is a sloth bear!!!!",
              "A grizzly's bite is estimated to be able to crush a bowling ball!!!!"]
+VORESCALE = [" is prey!!!!", " is a pred!!!!", " is an observer!!!!", " does not participate in vore!!!!"]
              
              
 #------lists------
@@ -163,6 +164,16 @@ async def abbascale(ctx, *, message):
                 aliases = ['bearfacts'])
 async def bearfacts(ctx):
     await client.say(random.choice(BEARFACTS))
+
+@client.command(pass_context=True,
+                name = 'Vorescale',
+                aliases = ['vorescale'])
+async def vorescale(ctx, *, message):
+            if 'me' in message:
+                        message = ctx.message.author.mention
+            else:
+                        message = message
+            await client.say(message + random.choice(VORESCALE))
 
 #------commands------
 
