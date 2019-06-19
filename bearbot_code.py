@@ -3,9 +3,10 @@ from discord.ext.commands import Bot
 import random
 import asyncio
 from discord.utils import get
+import os
 #------imports------
 
-TOKEN = 'NTg5ODg0NTg0MDIwMTQ4MjU1.XQaK8A.4bKLall6vykfCu3cCj01emc4tLY'
+TOKEN = os.environ["TOKEN"]
 BOT_PREFIX = ("bearbot ", "Bearbot ")
 client = Bot(command_prefix=BOT_PREFIX)
 #------tokens------
