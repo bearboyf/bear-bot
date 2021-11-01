@@ -6,7 +6,7 @@ from discord.utils import get
 import os
 #------imports------
 
-TOKEN = "NTg5ODg0NTg0MDIwMTQ4MjU1.XQaK1A.BPc7gSiLweBrNe0rlZvPFE4sfxo"
+TOKEN = os.environ["TOKEN"]
 BOT_PREFIX = ("bearbot ", "Bearbot ")
 client = Bot(command_prefix=BOT_PREFIX)
 #------tokens------
