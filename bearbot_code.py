@@ -6,7 +6,7 @@ from discord.utils import get
 import os
 #------imports------
 
-TOKEN = "NTg5ODg0NTg0MDIwMTQ4MjU1.XQaK1A.BPc7gSiLweBrNe0rlZvPFE4sfxo"
+TOKEN = os.environ["TOKEN"]
 BOT_PREFIX = ("bearbot ", "Bearbot ")
 client = Bot(command_prefix=BOT_PREFIX)
 #------tokens------
@@ -50,28 +50,26 @@ BEARFACTS = ["Bears can live as long as 30 years in the wild!!!!",
              "Baloo from the Jungle Book is a sloth bear!!!!",
              "A grizzly's bite is estimated to be able to crush a bowling ball!!!!"]
 VORESCALE = [" is prey!!!!", " is a pred!!!!", " is an observer!!!!", " does not participate in vore!!!!"]
-             
-             
 #------lists------
 
 @client.command(pass_context=True)
 async def say(ctx, *args):
     args = args + tuple('!!!!')
     msg = ' '.join(args)
-    return await client.say(msg)
+    return await ctx.send(msg)
 
 @client.command(pass_context=True,
                 name = 'is',
                 aliases = ["am", "do", "does", "are",
                            "will", "can", "should", "could", "did", "have", "would"])
-async def question_yn(context):
-    await client.say(random.choice(RESPONSE_LIST))
+async def question_yn(ctx):
+    await ctx.send(random.choice(RESPONSE_LIST))
 
 @client.command(pass_context=True,
                 name='i',
                 aliases = ['I', 'ily', 'ILY', 'we'])
-async def love(context):
-    await client.say('i love you too!!!!')
+async def love(ctx):
+    await ctx.send('i love you too!!!!')
 
 @client.command(pass_context=True,
                 name = 'Bearpost',
@@ -79,14 +77,14 @@ async def love(context):
 async def bearpost(ctx):
     bear_img = random.choice(BEAR_IMG)
     with open(bear_img, 'rb') as picture:
-              await client.send_file(ctx.message.channel, picture)
+        await ctx.send(file=discord.File(picture))
 
 @client.command(pass_context=True,
                 name = 'Posipost',
                 aliases = ['posipost'])
 async def posipost(ctx):
     posi_msg = random.choice(POSI_MSG)
-    await client.say(posi_msg)
+    await ctx.send(posi_msg)
 
 @client.command(pass_context=True,
                 name = 'Omegaverse',
@@ -96,19 +94,19 @@ async def omegaverse(ctx, *, message):
         message = ctx.message.author.mention
     else:
         message = message
-    await client.say(message + random.choice(OMEGAVERSE))
+    await ctx.send(message + random.choice(OMEGAVERSE))
 
 @client.command(pass_context=True,
                 name = 'Default',
                 aliases = ['default'])
 async def default(ctx):
-    await client.say('https://youtu.be/s_DRwFLPuLw')
+    await ctx.send('https://youtu.be/s_DRwFLPuLw')
 
 @client.command(pass_context=True,
                 name = 'Tiktok',
                 aliases = ['tiktok'])
 async def tiktok(ctx):
-    await client.say(random.choice(TIKTOK))
+    await ctx.send(random.choice(TIKTOK))
 
 @client.command(pass_context=True,
                 name = 'Pegscale',
@@ -118,7 +116,7 @@ async def pegscale(ctx, *, message):
         message = ctx.message.author.mention
     else:
         message = message
-    await client.say(message + random.choice(PEGSCALE))
+    await ctx.send(message + random.choice(PEGSCALE))
 
 @client.command(pass_context=True,
                 name = 'Validate',
@@ -128,7 +126,7 @@ async def validate(ctx, *, message):
         message = ctx.message.author.mention
     else:
         message = message
-    await client.say(message + " is " + str(random.randint(0,100)) + "% valid!!!!")
+    await ctx.send(message + " is " + str(random.randint(0,100)) + "% valid!!!!")
 
 @client.command(pass_context=True,
                 name = 'Twunkscale',
@@ -138,7 +136,7 @@ async def twunkscale(ctx, *, message):
         message = ctx.message.author.mention
     else:
         message = message
-    await client.say(message + random.choice(TWUNKSCALE))
+    await ctx.send(message + random.choice(TWUNKSCALE))
 
 @client.command(pass_context=True,
                 name = 'Versescale',
@@ -148,7 +146,7 @@ async def versescale(ctx, *, message):
         message = ctx.message.author.mention
     else:
         message = message
-    await client.say(message + random.choice(VERSESCALE))
+    await ctx.send(message + random.choice(VERSESCALE))
 
 @client.command(pass_context=True,
                 name = 'Abbascale',
@@ -158,27 +156,24 @@ async def abbascale(ctx, *, message):
         message = ctx.message.author.mention
     else:
         message = message
-    await client.say(message + random.choice(ABBASCALE))
+    await ctx.send(message + random.choice(ABBASCALE))
 
 @client.command(pass_context=True,
                 name = 'Bearfacts',
                 aliases = ['bearfacts'])
 async def bearfacts(ctx):
-    await client.say(random.choice(BEARFACTS))
+    await ctx.send(random.choice(BEARFACTS))
 
 @client.command(pass_context=True,
                 name = 'Vorescale',
                 aliases = ['vorescale'])
 async def vorescale(ctx, *, message):
-            if 'me' in message:
-                        message = ctx.message.author.mention
-            else:
-                        message = message
-            await client.say(message + random.choice(VORESCALE))
+    if 'me' in message:
+        message = ctx.message.author.mention
+    else:
+        message = message
+    await ctx.send(message + random.choice(VORESCALE))
 
 #------commands------
 
 client.run(TOKEN)
-
-
-

@@ -1,7 +1,7 @@
 aiohttp==3.7.4
 async-timeout==3.0.1
 chardet==3.0.4
-discord.py==0.16.12
+discord.py==1.7.3
 multidict==4.5.2
 pip==19.2
 setuptools==40.6.2
