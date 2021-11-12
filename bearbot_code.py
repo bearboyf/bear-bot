@@ -173,6 +173,12 @@ async def vorescale(ctx, *, message):
     else:
         message = message
     await ctx.send(message + random.choice(VORESCALE))
+           
+@client.command(pass_context=True,
+                name = 'Help'
+                alieases = ['help'])
+async def help(ctx):
+    await ctx.send('hi! my name is bearbot. i do a number of things:\n i can answer basic questions\n i can post bear images with bearpost\n i can send positive messages with posipost \n i can send tiktoks with tiktok \n i can assign things with: omegaverse, pegscale, twunkscale, abbascale, versescale, vorescale, validate\n i can also post facts with bearfacts!\n and a few secret commands ;)')
 
 #------commands------
 
